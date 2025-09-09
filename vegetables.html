@@ -551,29 +551,139 @@
 <script>
 /* ========== DATA ========== */
 const products = [
-  {id:'tomato', name:'Organic Tomatoes', price:15.43, unit:'/kg', category:'fruit', popular:95,
+  {id:'tomato', name:'Organic Tomatoes', price:4.99, unit:'/kg', category:'fruit', popular:95,
    img:'https://images.unsplash.com/photo-1561136594-7f68413baa99?auto=format&fit=crop&w=800&q=80',
    volume:2500},
-  {id:'spinach', name:'Fresh Spinach', price:5.00, unit:'/kg', category:'leafy', popular:88,
-   img:'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=80',
-   volume:1800},
-  {id:'carrot', name:'Organic Carrots', price:12.35, unit:'/kg', category:'root', popular:83,
-   img:'https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=800&q=80',
+
+  {id:'carrot', name:'Carrot', price:12.35, unit:'/kg', category:'root', popular:83,
+   img:'https://5.imimg.com/data5/SELLER/Default/2025/3/495998843/WX/SQ/NL/66789684/fresh-organic-carrot.jpg',
    volume:3200},
-  {id:'peppers', name:'Bell Peppers Mix', price:5.49, unit:'/kg', category:'fruit', popular:77,
-   img:'public/product-1.jpg', volume:1200},
-  {id:'kale', name:'Tuscan Kale', price:2.49, unit:'/kg', category:'leafy', popular:70,
-   img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80',
-   volume:900},
-  {id:'potato', name:'Baby Potatoes', price:10.00, unit:'/kg', category:'root', popular:91,
-   img:'https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=800&q=80',
+
+  {id:'cassava', name:'Cassava', price:3.33, unit:'/kg', category:'root', popular:70,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJfUtiwIsRCLUtPh2ZMX9wWFtgpFO2fdItig&s',
+   volume:4000},
+
+  {id:'yam', name:'Yam (Local)', price:8.82, unit:'/kg', category:'root', popular:75,
+   img:'https://specialtyproduce.com/sppics/17536.png',
+   volume:2200},
+
+  {id:'dasheen-local', name:'Dasheen (Local)', price:11.11, unit:'/kg', category:'root', popular:68,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtzLo5iX8GK2OYUf57JsiYsIplbGNQ4Vu8g&s',
+   volume:1800},
+
+  {id:'dasheen-imported', name:'Dasheen (Imported)', price:8.89, unit:'/kg', category:'root', popular:65,
+   img:'https://tropicalimportsexports.com/wp-content/uploads/2020/12/Taro-root-also-known-as-dasheen-Japanese-potato-cocoyam-826947190_1186x888.jpeg',
+   volume:1500},
+
+  {id:'eddoe-local', name:'Eddoe (Local)', price:9.78, unit:'/kg', category:'root', popular:60,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9vHtM0gadTWSo82qHgSXyfZ_B1ssn1ZCPsQ&s',
+   volume:1600},
+
+  {id:'eddoe-imported', name:'Eddoe (Imported)', price:13.33, unit:'/kg', category:'root', popular:58,
+   img:'https://villar.com.do/cdn/shop/products/eddoe1.png?v=1637155435',
+   volume:1400},
+
+  {id:'sweet-potato-local', name:'Sweet Potato (Local)', price:10.00, unit:'/kg', category:'root', popular:90,
+   img:'https://static.toiimg.com/thumb/msid-114505245,width-1280,height-720,resizemode-4/114505245.jpg',
    volume:8100},
-  {id:'basil', name:'Fresh Basil', price:1.49, unit:'/kg', category:'herbs', popular:86,
-   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW9QfyTa3_Kl5eFwwl8hvah0Pld2Fovbf2jg&s',
-   volume:600},
-  {id:'cucumber', name:'Cucumbers', price:11.11, unit:'/kg', category:'fruit', popular:65,
-   img:'public/cucumber.jpg', volume:4100}
+
+  {id:'ginger', name:'Ginger', price:55.12, unit:'/kg', category:'root', popular:85,
+   img:'https://media.post.rvohealth.io/wp-content/uploads/2023/09/ginger-root-still-life-1296x728-header.jpg',
+   volume:2100},
+
+  {id:'celery', name:'Celery', price:80.00, unit:'/bndl', category:'leafy', popular:65,
+   img:'https://greenspoon.co.ke/wp-content/uploads/2021/09/Greenspoon-Celery-Mlango-Farm.jpg',
+   volume:900},
+
+  {id:'chive', name:'Chive (1)', price:40.00, unit:'/bndl', category:'herbs', popular:60,
+   img:'https://www.harvst.co.uk/wp-content/uploads/2022/04/chives-scaled.jpeg',
+   volume:700},
+
+  {id:'thyme-small', name:'Thyme (S)', price:120.00, unit:'/bndl', category:'herbs', popular:72,
+   img:'https://urban-herbs.co.uk/cdn/shop/products/Mail-Order-Herbs-Mint-Thyme.jpg?v=1637256143',
+   volume:500},
+
+  {id:'hot-pepper', name:'Hot Pepper (40 lb)', price:600.00, unit:'/bag', category:'fruit', popular:80,
+   img:'https://www.burpee.com/media/catalog/product/3/a/3a04fc7b405fadd4761de77b534ba102109b8dde6f29e338e83f6fffeb7577d0.jpeg?optimize=medium&bg-color=255,255,255&fit=bounds&height=&width=',
+   volume:400},
+
+  {id:'shadon-beni', name:'Shadon Beni', price:15.00, unit:'/bndl', category:'herbs', popular:67,
+   img:'https://stmaartenagriculture.com/wp-content/uploads/2018/02/shado-beni-culantro-herb.jpg',
+   volume:650},
+
+  {id:'pimento', name:'Pimento (1)', price:50.00, unit:'/100s', category:'fruit', popular:55,
+   img:'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2024/06/26/pimento-peppers-red-hot-cherry-peppers-in-basket.jpg.rend.hgtvcom.1280.1280.85.suffix/1719419700650.webp',
+   volume:450},
+
+  {id:'lettuce-small', name:'Lettuce (S)', price:4.00, unit:'/head', category:'leafy', popular:78,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXYhxsk-SzTEfijfcD2t_rZEBcqQe6eEehCA&s',
+   volume:1200},
+
+  {id:'lettuce-medium', name:'Lettuce (M)', price:8.00, unit:'/head', category:'leafy', popular:80,
+   img:'https://images.unsplash.com/photo-1558818498-28c1e002b655?auto=format&fit=crop&w=800&q=80',
+   volume:1400},
+
+  {id:'lettuce-large', name:'Lettuce (L)', price:10.00, unit:'/head', category:'leafy', popular:85,
+   img:'public/lettuce.jpg',
+   volume:1600},
+
+  {id:'patchoi', name:'Patchoi', price:8.00, unit:'/bndl', category:'leafy', popular:70,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV4Rfy1i9hFGQTgCGzSOOvtxwXCpivoZAbjA&s',
+   volume:1100},
+
+  {id:'spinach-amaranthus', name:'Spinach (Amaranthus spp.)', price:5.00, unit:'/bndl', category:'leafy', popular:72,
+   img:'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=80',
+   volume:900},
+
+  {id:'cabbage-imported', name:'Cabbage (Imported, GN)', price:13.23, unit:'/kg', category:'leafy', popular:60,
+   img:'https://safiorganics.co.ke/wp-content/uploads/2024/04/www_themillstores_com-cabbage-600x600_4957ae4e-b9e5-42f9-880d-22b76eab47d6.webp',
+   volume:1500},
+
+  {id:'cabbage-local', name:'Cabbage (Local, GN)', price:17.64, unit:'/kg', category:'leafy', popular:65,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqB21NIUBSppETq3CGG7CHJXu15odxqMkyxQ&s',
+   volume:1700},
+
+  {id:'cauliflower', name:'Cauliflower (Local)', price:22.05, unit:'/kg', category:'leafy', popular:68,
+   img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKIMovzVxsFplJlWosTqeU-7Q42I9rY2kJkA&s',
+   volume:1200},
+
+  {id:'banana-ripe', name:'Banana (Ripe)', price:11.11, unit:'/kg', category:'fruit', popular:88,
+   img:'https://www.foodandwine.com/thmb/-p5XIoGihv4KMdlT6Tyw9-a1ZRs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/How-to-Ripen-Bananas-Quickly-FT-BLOG1023-cc2518e7a61943dfb87623e4981eb16e.jpg',
+   volume:4000},
+
+  {id:'banana-green', name:'Banana (Green)', price:5.51, unit:'/kg', category:'fruit', popular:70,
+   img:'public/ban.jpg',
+   volume:3500},
+
+  {id:'pawpaw', name:'Paw Paw', price:19.84, unit:'/kg', category:'fruit', popular:75,
+   img:'https://www.diggers.com.au/cdn/shop/products/papaya_red_lady_pprl_2048x.jpg?v=1649737322',
+   volume:1900},
+
+  {id:'pineapple', name:'Pineapple', price:11.02, unit:'/kg', category:'fruit', popular:85,
+   img:'https://www.jesmondfruitbarn.com.au/wp-content/uploads/2016/10/Jesmond-Fruit-Barn-Golden-Circle-Pineapple.jpg',
+   volume:2200},
+
+  {id:'watermelon', name:'Watermelon', price:6.61, unit:'/kg', category:'fruit', popular:80,
+   img:'https://www.epicgardening.com/wp-content/uploads/2023/04/A-shot-of-several-freshly-harvested-round-and-green-crops-placed-in-a-large-container-showcasing-watermelon-varieties.jpg',
+   volume:3000},
+
+  {id:'lime', name:'Lime (1)', price:60.00, unit:'/100s', category:'fruit', popular:60,
+   img:'https://healthyfamilyproject.com/wp-content/uploads/2020/05/Limes-background.jpg',
+   volume:700},
+
+  {id:'orange-small', name:'Orange (S)', price:280.00, unit:'/100s', category:'fruit', popular:65,
+   img:'https://images.ctfassets.net/3s5io6mnxfqz/4pj5VxwrrJnxZnuHhrI3cF/ed51ff54e7501c16567575a84e0b9976/AdobeStock_193767793.jpeg',
+   volume:800},
+
+  {id:'orange-medium', name:'Orange (M)', price:300.00, unit:'/100s', category:'fruit', popular:67,
+   img:'https://cdn.mos.cms.futurecdn.net/xCZ2VwHz6pDUHCSVvaQsDT.jpg',
+   volume:900},
+
+  {id:'orange-large', name:'Orange (L)', price:350.00, unit:'/100s', category:'fruit', popular:70,
+   img:'https://www.misterproduce.com/wp-content/uploads/2018/10/ORANGES-LARGE.jpg',
+   volume:1000},
 ];
+
 
 /* ========== AUTO GENERATE DESC ========== */
 function updateDescriptions() {
